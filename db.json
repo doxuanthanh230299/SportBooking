@@ -10,5 +10,67 @@
     ],
     "profile": {
         "name": "typicode"
-    }
+    },
+    "sports": [
+        {
+            "id": "1",
+            "name": "Bóng đá",
+            "description": "Bóng đá là một môn thể thao đồng đội được chơi giữa hai đội, mỗi đội có 11 cầu thủ. Mục tiêu của trò chơi là ghi bàn bằng cách đưa quả bóng vào khung thành của đối phương.",
+            "image": "https://example.com/football.jpg"
+        },
+        {
+            "id": "2",
+            "name": "Bóng rổ",
+            "description": "Bóng rổ là một môn thể thao đồng đội được chơi giữa hai đội, mỗi đội có 5 cầu thủ. Mục tiêu của trò chơi là ghi điểm bằng cách ném quả bóng vào rổ của đối phương.",
+            "image": "https://example.com/basketball.jpg"
+        },
+        {
+            "id": "3",
+            "name": "Quần vợt",
+            "description": "Quần vợt là một môn thể thao được chơi giữa hai người (đơn) hoặc hai đội (đôi). Mục tiêu của trò chơi là đánh quả bóng qua lưới và vào phần sân của đối phương.",
+            "image": "https://example.com/tennis.jpg"
+        },
+        {
+            "id": "4",
+            "name": "Cầu lông",
+            "description": "Cầu lông là một môn thể thao được chơi giữa hai người (đơn) hoặc hai đội (đôi). Mục tiêu của trò chơi là đánh quả cầu qua lưới và vào phần sân của đối phương.",
+            "image": "https://example.com/badminton.jpg"
+        },
+        {
+            "id": "5",
+            "name": "Bóng chuyền",
+            "description": "Bóng chuyền là một môn thể thao đồng đội được chơi giữa hai đội, mỗi đội có 6 cầu thủ. Mục tiêu của trò chơi là ghi điểm bằng cách đánh quả bóng qua lưới và vào phần sân của đối phương.",
+            "image": "https://example.com/volleyball.jpg"
+        },  
+        {
+            "id": "6",
+            "name": "Bóng bàn",
+            "description": "Bóng bàn là một môn thể thao được chơi giữa hai người (đơn) hoặc hai đội (đôi). Mục tiêu của trò chơi là đánh quả bóng qua lưới và vào phần sân của đối phương.",
+            "image": "https://example.com/tabletennis.jpg"
+        },
+        {
+            "id": "7",
+            "name": "Bóng ném",
+            "description": "Bóng ném là một môn thể thao đồng đội được chơi giữa hai đội, mỗi đội có 7 cầu thủ. Mục tiêu của trò chơi là ghi điểm bằng cách ném quả bóng vào khung thành của đối phương.",
+            "image": "https://example.com/handball.jpg"
+        },
+        {
+            "id": "8",
+            "name": "Bóng bầu dục",
+            "description": "Bóng bầu dục là một môn thể thao đồng đội được chơi giữa hai đội, mỗi đội có 15 cầu thủ. Mục tiêu của trò chơi là ghi điểm bằng cách đưa quả bóng vào khu vực ghi điểm của đối phương.",
+            "image": "https://example.com/rugby.jpg"
+        },
+        {
+            "id": "9",
+            "name": "Bóng chày",
+            "description": "Bóng chày là một môn thể thao đồng đội được chơi giữa hai đội, mỗi đội có 9 cầu thủ. Mục tiêu của trò chơi là ghi điểm bằng cách đánh quả bóng và chạy qua các căn cứ để về đích.",
+            "image": "https://example.com/baseball.jpg"
+        },
+        {
+            "id": "10",
+            "name": "Bóng đá trong nhà (Futsal)",
+            "description": "Futsal là một biến thể của bóng đá được chơi trong nhà với sân nhỏ hơn và số lượng cầu thủ ít hơn. Mục tiêu của trò chơi vẫn là ghi bàn bằng cách đưa quả bóng vào khung thành của đối phương.",
+            "image": "https://example.com/futsal.jpg"
+        }
+    ]
 }
