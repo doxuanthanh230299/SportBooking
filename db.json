@@ -1,76 +1,96 @@
 {
-    "$schema": "./node_modules/json-server/schema.json",
-    "posts": [
-        { "id": "1", "title": "a title", "views": 100 },
-        { "id": "2", "title": "another title", "views": 200 }
-    ],
-    "comments": [
-        { "id": "1", "text": "a comment about post 1", "postId": "1" },
-        { "id": "2", "text": "another comment about post 1", "postId": "1" }
-    ],
-    "profile": {
-        "name": "typicode"
+  "sports": [
+    { "id": "football", "name": "Bóng đá", "description": "..." },
+    { "id": "basketball", "name": "Bóng rổ", "description": "..." },
+    { "id": "tennis", "name": "Quần vợt", "description": "..." },
+    { "id": "badminton", "name": "Cầu lông", "description": "..." },
+    { "id": "volleyball", "name": "Bóng chuyền", "description": "..." }
+  ],
+
+  "provinces": [
+    { "id": "hn", "name": "Hà Nội", "code": "HN" },
+    { "id": "hcm", "name": "TP.HCM", "code": "HCM" },
+    { "id": "dn", "name": "Đà Nẵng", "code": "DN" },
+    { "id": "hp", "name": "Hải Phòng", "code": "HP" },
+    { "id": "ct", "name": "Cần Thơ", "code": "CT" }
+  ],
+
+  "districts": [
+    { "id": "cau-giay", "name": "Cầu Giấy", "provinceId": "hn" },
+    { "id": "ba-dinh", "name": "Ba Đình", "provinceId": "hn" },
+    { "id": "dong-da", "name": "Đống Đa", "provinceId": "hn" },
+    { "id": "hoan-kiem", "name": "Hoàn Kiếm", "provinceId": "hn" },
+
+    { "id": "q1", "name": "Quận 1", "provinceId": "hcm" },
+    { "id": "q3", "name": "Quận 3", "provinceId": "hcm" },
+    { "id": "tan-binh", "name": "Tân Bình", "provinceId": "hcm" },
+    { "id": "thu-duc", "name": "Thủ Đức", "provinceId": "hcm" },
+
+    { "id": "hai-chau", "name": "Hải Châu", "provinceId": "dn" },
+    { "id": "son-tra", "name": "Sơn Trà", "provinceId": "dn" },
+
+    { "id": "ngo-quyen", "name": "Ngô Quyền", "provinceId": "hp" },
+    { "id": "le-chan", "name": "Lê Chân", "provinceId": "hp" },
+
+    { "id": "ninh-kieu", "name": "Ninh Kiều", "provinceId": "ct" },
+    { "id": "binh-thuy", "name": "Bình Thủy", "provinceId": "ct" }
+  ],
+
+  "courts": [
+    {
+      "id": "c1",
+      "name": "Sân Cầu Giấy A1",
+      "districtId": "cau-giay",
+      "sportId": "football",
+      "pricePerHour": 200000,
+      "status": "available",
+      "rating": 4.5
     },
-    "sports": [
-        {
-            "id": "1",
-            "name": "Bóng đá",
-            "description": "Bóng đá là một môn thể thao đồng đội được chơi giữa hai đội, mỗi đội có 11 cầu thủ. Mục tiêu của trò chơi là ghi bàn bằng cách đưa quả bóng vào khung thành của đối phương.",
-            "image": "https://example.com/football.jpg"
-        },
-        {
-            "id": "2",
-            "name": "Bóng rổ",
-            "description": "Bóng rổ là một môn thể thao đồng đội được chơi giữa hai đội, mỗi đội có 5 cầu thủ. Mục tiêu của trò chơi là ghi điểm bằng cách ném quả bóng vào rổ của đối phương.",
-            "image": "https://example.com/basketball.jpg"
-        },
-        {
-            "id": "3",
-            "name": "Quần vợt",
-            "description": "Quần vợt là một môn thể thao được chơi giữa hai người (đơn) hoặc hai đội (đôi). Mục tiêu của trò chơi là đánh quả bóng qua lưới và vào phần sân của đối phương.",
-            "image": "https://example.com/tennis.jpg"
-        },
-        {
-            "id": "4",
-            "name": "Cầu lông",
-            "description": "Cầu lông là một môn thể thao được chơi giữa hai người (đơn) hoặc hai đội (đôi). Mục tiêu của trò chơi là đánh quả cầu qua lưới và vào phần sân của đối phương.",
-            "image": "https://example.com/badminton.jpg"
-        },
-        {
-            "id": "5",
-            "name": "Bóng chuyền",
-            "description": "Bóng chuyền là một môn thể thao đồng đội được chơi giữa hai đội, mỗi đội có 6 cầu thủ. Mục tiêu của trò chơi là ghi điểm bằng cách đánh quả bóng qua lưới và vào phần sân của đối phương.",
-            "image": "https://example.com/volleyball.jpg"
-        },  
-        {
-            "id": "6",
-            "name": "Bóng bàn",
-            "description": "Bóng bàn là một môn thể thao được chơi giữa hai người (đơn) hoặc hai đội (đôi). Mục tiêu của trò chơi là đánh quả bóng qua lưới và vào phần sân của đối phương.",
-            "image": "https://example.com/tabletennis.jpg"
-        },
-        {
-            "id": "7",
-            "name": "Bóng ném",
-            "description": "Bóng ném là một môn thể thao đồng đội được chơi giữa hai đội, mỗi đội có 7 cầu thủ. Mục tiêu của trò chơi là ghi điểm bằng cách ném quả bóng vào khung thành của đối phương.",
-            "image": "https://example.com/handball.jpg"
-        },
-        {
-            "id": "8",
-            "name": "Bóng bầu dục",
-            "description": "Bóng bầu dục là một môn thể thao đồng đội được chơi giữa hai đội, mỗi đội có 15 cầu thủ. Mục tiêu của trò chơi là ghi điểm bằng cách đưa quả bóng vào khu vực ghi điểm của đối phương.",
-            "image": "https://example.com/rugby.jpg"
-        },
-        {
-            "id": "9",
-            "name": "Bóng chày",
-            "description": "Bóng chày là một môn thể thao đồng đội được chơi giữa hai đội, mỗi đội có 9 cầu thủ. Mục tiêu của trò chơi là ghi điểm bằng cách đánh quả bóng và chạy qua các căn cứ để về đích.",
-            "image": "https://example.com/baseball.jpg"
-        },
-        {
-            "id": "10",
-            "name": "Bóng đá trong nhà (Futsal)",
-            "description": "Futsal là một biến thể của bóng đá được chơi trong nhà với sân nhỏ hơn và số lượng cầu thủ ít hơn. Mục tiêu của trò chơi vẫn là ghi bàn bằng cách đưa quả bóng vào khung thành của đối phương.",
-            "image": "https://example.com/futsal.jpg"
-        }
-    ]
+    {
+      "id": "c2",
+      "name": "Sân Ba Đình B1",
+      "districtId": "ba-dinh",
+      "sportId": "football",
+      "pricePerHour": 180000,
+      "status": "available",
+      "rating": 4.2
+    },
+    {
+      "id": "c3",
+      "name": "Sân Đống Đa Center",
+      "districtId": "dong-da",
+      "sportId": "badminton",
+      "pricePerHour": 120000,
+      "status": "maintenance",
+      "rating": 4.0
+    },
+    {
+      "id": "c4",
+      "name": "Sân Hoàn Kiếm Mini",
+      "districtId": "hoan-kiem",
+      "sportId": "tennis",
+      "pricePerHour": 300000,
+      "status": "available",
+      "rating": 4.8
+    },
+
+    {
+      "id": "c5",
+      "name": "Sân Quận 1 Sport Hub",
+      "districtId": "q1",
+      "sportId": "football",
+      "pricePerHour": 250000,
+      "status": "available",
+      "rating": 4.7
+    },
+    {
+      "id": "c6",
+      "name": "Sân Quận 3 Arena",
+      "districtId": "q3",
+      "sportId": "badminton",
+      "pricePerHour": 140000,
+      "status": "available",
+      "rating": 4.3
+    }
+  ]
 }

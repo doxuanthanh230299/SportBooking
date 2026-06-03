@@ -1,25 +1,13 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+import { axiosInstance } from "./axios";
 
 export async function api<T>(
     endpoint: string,
-    options?: RequestInit,
+    options?: any
 ): Promise<T> {
-    const response = await fetch(
-        `${BASE_URL}${endpoint}`,
-        {
-            headers: {
-                "Content-Type": "application/json",
-                ...options?.headers,
-            },
-            ...options,
-        },
-    );
+    const res = await axiosInstance.request<T>({
+        url: endpoint,
+        ...options
+    });
 
-    if (!response.ok) {
-        throw new Error(
-            `API Error: ${response.status}`,
-        );
-    }
-
-    return response.json();
+    return res.data;
 }
