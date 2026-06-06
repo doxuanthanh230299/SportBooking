@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/utils/cn";
@@ -29,9 +30,9 @@ const buttonVariants = cva(
             },
 
             size: {
-                sm: "h-9 px-3 text-sm gap-1.5",
-                md: "h-11 px-4 text-base gap-2",
-                lg: "h-13 px-6 text-lg gap-2.5",
+                sm: "h-8 px-2 md:h-9 md:px-3 text-sm gap-1.5",
+                md: "h-10 px-3 md:h-11 md:px-4 text-base gap-2",
+                lg: "h-12 px-4 md:h-13 md:px-6 text-lg gap-2.5",
             },
 
             fullWidth: {

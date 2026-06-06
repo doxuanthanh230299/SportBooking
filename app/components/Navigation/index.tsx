@@ -9,7 +9,7 @@ const Navigation = () => {
     const isActive = (path: string) => pathname === path;
 
     return (
-        <nav className="flex items-center px-10 py-3 gap-4">
+        <nav className="hidden md:flex items-center px-10 py-3 gap-4">
             <Link
                 href="/"
                 className={`flex flex-col items-center gap-2 text-white hover:bg-primary-700 cursor-pointer py-3 px-6 rounded-md ${isActive("/") ? "bg-primary-700 font-bold" : ""}`}

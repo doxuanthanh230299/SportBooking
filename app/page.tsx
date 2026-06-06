@@ -1,22 +1,17 @@
 import { Clock, Headset, ShieldCheck, Tag } from "lucide-react";
-import Button from "./components/Button";
-import Select from "./components/SelectProvince";
-import { provinceService } from "@/services/provinces.service";
 import SearchBar from "./components/SearchBar";
 
 export default async function HomePage() {
-    const provinces = await provinceService.getAll();
-
     return (
         <div className="flex flex-col flex-1 bg-no-repeat bg-[url('/banner.png')] bg-cover w-full">
             <div className="mx-auto mb-4 py-20 px-6 flex flex-col items-start gap-4 max-w-screen-xl w-full rounded-b-xl">
-                <h1 className="text-6xl font-bold text-white">
+                <h1 className="text-4xl md:text-6xl font-bold text-white">
                     Đặt sân thể thao
                 </h1>
-                <div className="text-4xl font-semibold text-primary-500">
+                <div className="text-lg md:text-4xl font-semibold text-primary-500">
                     Nhanh chóng - Tiện lợi - An toàn
                 </div>
-                <div className="border-l-2 border-primary-500 pl-4 text-xl text-white">
+                <div className="border-l-2 border-primary-500 pl-4 text-md md:text-xl text-white">
                     <div>Hàng nghìn sân chất lượng trên toàn quốc</div>
                     <div>
                         Trải nghiệm đặt sân chỉ với vài bước thật đơn giản
@@ -24,18 +19,11 @@ export default async function HomePage() {
                 </div>
             </div>
 
-            <div className="mx-auto mb-4 flex flex-col items-start gap-4 max-w-screen-xl w-full rounded-b-xl">
-                {/* <div className="flex w-fit rounded-xl bg-white p-6 items-center gap-4">
-                    <Select />
-                    <div className="pr-4"></div>
-                    <Button variant="primary" className="px-8 py-4 text-lg">
-                        Tìm kiếm
-                    </Button>
-                </div> */}
-                    <SearchBar />
+            <div className="mx-auto px-6 md:px-0 mb-4 flex flex-col items-start gap-4 max-w-screen-xl w-full rounded-b-xl">
+                <SearchBar />
             </div>
 
-            <div className="mx-auto mb-4 p-6 flex justify-between items-start gap-4 max-w-screen-xl w-full rounded-xl bg-primary-850">
+            <div className="grid grid-cols-1 gap-4 mx-auto mb-4 p-6 sm:grid-cols-2 md:grid-cols-4 max-w-screen-xl w-full rounded-xl bg-primary-850">
                 <Feature
                     icon={<ShieldCheck />}
                     title="Uy tín & chất lượng"
