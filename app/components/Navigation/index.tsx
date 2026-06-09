@@ -17,10 +17,10 @@ const Navigation = () => {
                 Trang chủ
             </Link>
             <Link
-                href="/explore"
-                className={`flex flex-col items-center gap-2 text-white hover:bg-primary-700 cursor-pointer py-3 px-6 rounded-md ${isActive("/explore") ? "bg-primary-700 font-bold" : ""}`}
+                href="/list"
+                className={`flex flex-col items-center gap-2 text-white hover:bg-primary-700 cursor-pointer py-3 px-6 rounded-md ${isActive("/list") ? "bg-primary-700 font-bold" : ""}`}
             >
-                Khám phá
+                Danh sách sân
             </Link>
             <Link
                 href="/trending"

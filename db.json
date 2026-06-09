@@ -1,96 +1,297 @@
 {
-  "sports": [
-    { "id": "football", "name": "Bóng đá", "description": "..." },
-    { "id": "basketball", "name": "Bóng rổ", "description": "..." },
-    { "id": "tennis", "name": "Quần vợt", "description": "..." },
-    { "id": "badminton", "name": "Cầu lông", "description": "..." },
-    { "id": "volleyball", "name": "Bóng chuyền", "description": "..." }
-  ],
+    "sports": [
+        { "id": "football", "name": "Bóng đá" },
+        { "id": "basketball", "name": "Bóng rổ" },
+        { "id": "tennis", "name": "Quần vợt" },
+        { "id": "badminton", "name": "Cầu lông" },
+        { "id": "volleyball", "name": "Bóng chuyền" }
+    ],
 
-  "provinces": [
-    { "id": "hn", "name": "Hà Nội", "code": "HN" },
-    { "id": "hcm", "name": "TP.HCM", "code": "HCM" },
-    { "id": "dn", "name": "Đà Nẵng", "code": "DN" },
-    { "id": "hp", "name": "Hải Phòng", "code": "HP" },
-    { "id": "ct", "name": "Cần Thơ", "code": "CT" }
-  ],
+    "provinces": [
+        { "id": "hn", "name": "Hà Nội" },
+        { "id": "hcm", "name": "TP.HCM" }
+    ],
 
-  "districts": [
-    { "id": "cau-giay", "name": "Cầu Giấy", "provinceId": "hn" },
-    { "id": "ba-dinh", "name": "Ba Đình", "provinceId": "hn" },
-    { "id": "dong-da", "name": "Đống Đa", "provinceId": "hn" },
-    { "id": "hoan-kiem", "name": "Hoàn Kiếm", "provinceId": "hn" },
+    "districts": [
+        {
+            "id": "cau-giay",
+            "name": "Cầu Giấy",
+            "provinceId": "hn"
+        },
+        {
+            "id": "ba-dinh",
+            "name": "Ba Đình",
+            "provinceId": "hn"
+        },
+        {
+            "id": "q1",
+            "name": "Quận 1",
+            "provinceId": "hcm"
+        },
+        {
+            "id": "q3",
+            "name": "Quận 3",
+            "provinceId": "hcm"
+        }
+    ],
 
-    { "id": "q1", "name": "Quận 1", "provinceId": "hcm" },
-    { "id": "q3", "name": "Quận 3", "provinceId": "hcm" },
-    { "id": "tan-binh", "name": "Tân Bình", "provinceId": "hcm" },
-    { "id": "thu-duc", "name": "Thủ Đức", "provinceId": "hcm" },
+    "users": [
+        {
+            "id": "u1",
+            "fullName": "Nguyễn Văn A",
+            "email": "vana@gmail.com",
+            "password": "123456",
+            "phone": "0900000001",
+            "avatar": "https://i.pravatar.cc/150?img=1",
+            "role": "customer",
+            "status": "active"
+        },
+        {
+            "id": "u2",
+            "fullName": "Trần Văn B",
+            "email": "vanb@gmail.com",
+            "password": "123456",
+            "phone": "0900000002",
+            "avatar": "https://i.pravatar.cc/150?img=2",
+            "role": "owner",
+            "status": "active"
+        },
+        {
+            "id": "u3",
+            "fullName": "Admin",
+            "email": "admin@gmail.com",
+            "password": "123456",
+            "phone": "0900000003",
+            "avatar": "https://i.pravatar.cc/150?img=3",
+            "role": "admin",
+            "status": "active"
+        }
+    ],
 
-    { "id": "hai-chau", "name": "Hải Châu", "provinceId": "dn" },
-    { "id": "son-tra", "name": "Sơn Trà", "provinceId": "dn" },
+    "courtOwners": [
+        {
+            "id": "o1",
+            "userId": "u2",
+            "businessName": "Sport Hub Việt Nam"
+        }
+    ],
 
-    { "id": "ngo-quyen", "name": "Ngô Quyền", "provinceId": "hp" },
-    { "id": "le-chan", "name": "Lê Chân", "provinceId": "hp" },
+    "courts": [
+        {
+            "id": "c1",
+            "ownerId": "o1",
+            "name": "Sân Cầu Giấy A1",
+            "sportId": "football",
+            "provinceId": "hn",
+            "districtId": "cau-giay",
+            "address": "123 Nguyễn Phong Sắc",
+            "pricePerHour": 200000,
+            "courtType": "5v5",
+            "status": "active",
+            "averageRating": 4.5,
+            "reviewCount": 12
+        },
+        {
+            "id": "c2",
+            "ownerId": "o1",
+            "name": "Sân Ba Đình B1",
+            "sportId": "football",
+            "provinceId": "hn",
+            "districtId": "ba-dinh",
+            "address": "55 Đội Cấn",
+            "pricePerHour": 180000,
+            "courtType": "7v7",
+            "status": "active",
+            "averageRating": 4.2,
+            "reviewCount": 8
+        },
+        {
+            "id": "c3",
+            "ownerId": "o1",
+            "name": "Sân Quận 1 Sport Hub",
+            "sportId": "badminton",
+            "provinceId": "hcm",
+            "districtId": "q1",
+            "address": "200 Nguyễn Huệ",
+            "pricePerHour": 150000,
+            "courtType": "indoor",
+            "status": "maintenance",
+            "averageRating": 4.7,
+            "reviewCount": 21
+        },
+        {
+            "id": "c4",
+            "ownerId": "o1",
+            "name": "Sân Quận 3 Sport Hub",
+            "sportId": "tennis",
+            "provinceId": "hcm",
+            "districtId": "q3",
+            "address": "300 Võ Văn Tần",
+            "pricePerHour": 250000,
+            "courtType": "outdoor",
+            "status": "active",
+            "averageRating": 4.8,
+            "reviewCount": 15
+        },
+        {
+            "id": "c5",
+            "ownerId": "o1",
+            "name": "Sân Cầu Giấy A2",
+            "sportId": "football",
+            "provinceId": "hn",
+            "districtId": "cau-giay",
+            "address": "125 Nguyễn Phong Sắc",
+            "pricePerHour": 210000,
+            "courtType": "5v5",
+            "status": "active",
+            "averageRating": 4.6,
+            "reviewCount": 10
+        },
+        {
+            "id": "c6",
+            "ownerId": "o1",
+            "name": "Sân Ba Đình B2",
+            "sportId": "football",
+            "provinceId": "hn",
+            "districtId": "ba-dinh",
+            "address": "57 Đội Cấn",
+            "pricePerHour": 190000,
+            "courtType": "7v7",
+            "status": "active",
+            "averageRating": 4.3,
+            "reviewCount": 9
+        },
+        {
+            "id": "c7",
+            "ownerId": "o1",
+            "name": "Sân Quận 1 Sport Hub 2",
+            "sportId": "badminton",
+            "provinceId": "hcm",
+            "districtId": "q1",
+            "address": "202 Nguyễn Huệ",
+            "pricePerHour": 160000,
+            "courtType": "indoor",
+            "status": "maintenance",
+            "averageRating": 4.8,
+            "reviewCount": 18
+        },
+        {
+            "id": "c8",
+            "ownerId": "o1",
+            "name": "Sân Quận 3 Sport Hub 2",
+            "sportId": "tennis",
+            "provinceId": "hcm",
+            "districtId": "q3",
+            "address": "302 Võ Văn Tần",
+            "pricePerHour": 260000,
+            "courtType": "outdoor",
+            "status": "active",
+            "averageRating": 4.9,
+            "reviewCount": 20
+        },
+        {
+            "id": "c9",
+            "ownerId": "o1",
+            "name": "Sân Cầu Giấy A3",
+            "sportId": "football",
+            "provinceId": "hn",
+            "districtId": "cau-giay",
+            "address": "127 Nguyễn Phong Sắc",
+            "pricePerHour": 220000,
+            "courtType": "5v5",
+            "status": "active",
+            "averageRating": 4.7,
+            "reviewCount": 11
+        },
+        {
+            "id": "c10",
+            "ownerId": "o1",
+            "name": "Sân Ba Đình B3",
+            "sportId": "football",
+            "provinceId": "hn",
+            "districtId": "ba-dinh",
+            "address": "59 Đội Cấn",
+            "pricePerHour": 200000,
+            "courtType": "7v7",
+            "status": "active",
+            "averageRating": 4.4,
+            "reviewCount": 7
+        }
+    ],
 
-    { "id": "ninh-kieu", "name": "Ninh Kiều", "provinceId": "ct" },
-    { "id": "binh-thuy", "name": "Bình Thủy", "provinceId": "ct" }
-  ],
+    "courtImages": [
+        {
+            "id": "img1",
+            "courtId": "c1",
+            "url": "/images/c1-1.jpg"
+        },
+        {
+            "id": "img2",
+            "courtId": "c1",
+            "url": "/images/c1-2.jpg"
+        },
+        {
+            "id": "img3",
+            "courtId": "c2",
+            "url": "/images/c2-1.jpg"
+        }
+    ],
 
-  "courts": [
-    {
-      "id": "c1",
-      "name": "Sân Cầu Giấy A1",
-      "districtId": "cau-giay",
-      "sportId": "football",
-      "pricePerHour": 200000,
-      "status": "available",
-      "rating": 4.5
-    },
-    {
-      "id": "c2",
-      "name": "Sân Ba Đình B1",
-      "districtId": "ba-dinh",
-      "sportId": "football",
-      "pricePerHour": 180000,
-      "status": "available",
-      "rating": 4.2
-    },
-    {
-      "id": "c3",
-      "name": "Sân Đống Đa Center",
-      "districtId": "dong-da",
-      "sportId": "badminton",
-      "pricePerHour": 120000,
-      "status": "maintenance",
-      "rating": 4.0
-    },
-    {
-      "id": "c4",
-      "name": "Sân Hoàn Kiếm Mini",
-      "districtId": "hoan-kiem",
-      "sportId": "tennis",
-      "pricePerHour": 300000,
-      "status": "available",
-      "rating": 4.8
-    },
+    "timeSlots": [
+        {
+            "id": "t1",
+            "startTime": "06:00",
+            "endTime": "07:00"
+        },
+        {
+            "id": "t2",
+            "startTime": "07:00",
+            "endTime": "08:00"
+        },
+        {
+            "id": "t3",
+            "startTime": "08:00",
+            "endTime": "09:00"
+        }
+    ],
 
-    {
-      "id": "c5",
-      "name": "Sân Quận 1 Sport Hub",
-      "districtId": "q1",
-      "sportId": "football",
-      "pricePerHour": 250000,
-      "status": "available",
-      "rating": 4.7
-    },
-    {
-      "id": "c6",
-      "name": "Sân Quận 3 Arena",
-      "districtId": "q3",
-      "sportId": "badminton",
-      "pricePerHour": 140000,
-      "status": "available",
-      "rating": 4.3
-    }
-  ]
+    "bookings": [
+        {
+            "id": "b1",
+            "userId": "u1",
+            "courtId": "c1",
+            "bookingDate": "2026-06-10",
+            "slotId": "t1",
+            "totalPrice": 200000,
+            "status": "confirmed",
+            "paymentStatus": "paid"
+        },
+        {
+            "id": "b2",
+            "userId": "u1",
+            "courtId": "c2",
+            "bookingDate": "2026-06-12",
+            "slotId": "t2",
+            "totalPrice": 180000,
+            "status": "pending",
+            "paymentStatus": "unpaid"
+        }
+    ],
+
+    "reviews": [
+        {
+            "id": "r1",
+            "userId": "u1",
+            "courtId": "c1",
+            "rating": 5,
+            "comment": "Sân đẹp, mặt cỏ tốt."
+        },
+        {
+            "id": "r2",
+            "userId": "u1",
+            "courtId": "c2",
+            "rating": 4,
+            "comment": "Giá hợp lý, dịch vụ ổn."
+        }
+    ]
 }
