@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Court } from "@/types/courts";
 import { Star, MapPin } from "lucide-react";
 import BookingTimeModal from "../BookingTimeModal";
+import { Booking } from "@/types/bookings";
 
 interface CourtCardProps {
     court: Court;
@@ -19,6 +20,12 @@ export function CourtCard({
     districtName,
 }: CourtCardProps) {
     const [bookingOpen, setBookingOpen] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+
+    const handleBookingConfirmed = (booking: Booking) => {
+        setSuccessMessage("Đặt sân thành công! Vui lòng kiểm tra lịch sử đặt sân của bạn.");
+        setTimeout(() => setSuccessMessage(""), 3000);
+    };
 
     return (
         <>
@@ -100,10 +107,17 @@ export function CourtCard({
                 </div>
             </div>
 
+            {successMessage && (
+                <div className="mt-2 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-800">
+                    {successMessage}
+                </div>
+            )}
+
             <BookingTimeModal
                 court={court}
                 open={bookingOpen}
                 onClose={() => setBookingOpen(false)}
+                onBookingConfirmed={handleBookingConfirmed}
             />
         </>
     );
