@@ -17,3 +17,8 @@ export interface User {
     role: UserRole;
     status: UserStatus;
 }
+
+export interface RegisterResponse {
+    accessToken: string;
+    user: User;
+}
