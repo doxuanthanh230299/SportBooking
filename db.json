@@ -93,6 +93,16 @@
       "status": "active",
       "avatar": "https://i.pravatar.cc/150?u=dt2@gmail.com",
       "id": 4
+    },
+    {
+      "email": "abcxyz1@gmail.com",
+      "password": "$2a$10$FBfi804ZAIBuMpUl49orpeX4UrrT5BcstOxTkwkFGgKqkvx8HZXSu",
+      "fullName": "Do Thanh",
+      "phone": "0999999999",
+      "role": "customer",
+      "status": "active",
+      "avatar": "https://i.pravatar.cc/150?u=abcxyz1@gmail.com",
+      "id": 5
     }
   ],
   "courtOwners": [

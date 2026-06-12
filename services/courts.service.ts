@@ -2,8 +2,38 @@ import { api } from "./api";
 import { Court } from "@/types/courts";
 
 export const courtService = {
-    getAll() {
-        return api<Court[]>("/courts");
+    getAll(filters?: {
+        sportId?: string;
+        provinceId?: string;
+        districtId?: string;
+    }) {
+        const params =
+            new URLSearchParams();
+
+        if (filters?.sportId) {
+            params.append(
+                "sportId",
+                filters.sportId
+            );
+        }
+
+        if (filters?.provinceId) {
+            params.append(
+                "provinceId",
+                filters.provinceId
+            );
+        }
+
+        if (filters?.districtId) {
+            params.append(
+                "districtId",
+                filters.districtId
+            );
+        }
+
+        return api<Court[]>(
+            `/courts?${params.toString()}`
+        );
     },
 
     getById(id: string) {

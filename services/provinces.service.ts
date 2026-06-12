@@ -1,5 +1,5 @@
 import { api } from "./api";
-import { Province } from "@/types/province";
+import { District, Province } from "@/types/province";
 
 export const provinceService = {
     getAll(): Promise<Province[]> {
@@ -8,6 +8,14 @@ export const provinceService = {
 
     getById(id: string): Promise<Province> {
         return api<Province>(`/provinces/${id}`);
+    },
+
+    getByProvinceId(
+        provinceId: string
+    ): Promise<District[]> {
+        return api<District[]>(
+            `/districts?provinceId=${provinceId}`
+        );
     },
 
     create(data: Omit<Province, "id">): Promise<Province> {
