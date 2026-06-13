@@ -45,8 +45,8 @@ const ListPage = async ({ searchParams }: Props) => {
                     <div className={courts.length !== 0 ? "lg:col-span-9" : "lg:col-span-9 flex flex-1"}>
                         {courts.length === 0 ? (
                             <div className="flex flex-col justify-center rounded-lg flex-1 bg-white p-6 items-center text-center text-gray-500">
-                                <SearchX size={100} className="mx-auto mb-4" />
-                                <span className="text-[30px]">Không tìm thấy sân nào phù hợp.</span>
+                                <SearchX className="mx-auto mb-4 w-16 h-16 md:w-24 md:h-24 lg:w-32 lg:h-32" />
+                                <span className="text-4 lg:text-[30px]">Không tìm thấy sân nào phù hợp.</span>
                             </div>
                         ) : (
                             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">

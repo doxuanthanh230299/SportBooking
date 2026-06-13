@@ -44,6 +44,16 @@ const Header = () => {
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setMounted(true);
         setUser(authService.getCurrentUser());
+
+        const handleOpenLogin = () => {
+            setOpenLogin(true);
+        };
+
+        window.addEventListener("open-login-modal", handleOpenLogin);
+
+        return () => {
+            window.removeEventListener("open-login-modal", handleOpenLogin);
+        };
     }, []);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>, isLogin: boolean) => {
@@ -74,10 +84,7 @@ const Header = () => {
 
             setOpenLogin(false);
 
-            setLoginForm({
-                email: "",
-                password: "",
-            });
+            window.location.reload();
         } catch (error) {
             console.error(error);
             alert("Email hoặc mật khẩu không đúng");
@@ -130,6 +137,7 @@ const Header = () => {
     const handleLogout = () => {
         authService.logout();
         setUser(null);
+        window.location.reload();
     };
 
     if (!mounted) {
@@ -202,7 +210,13 @@ const Header = () => {
             </header>
 
             <Modal open={openLogin} onClose={() => setOpenLogin(false)} title="Đăng nhập">
-                <div className="space-y-4">
+                <form
+                    className="space-y-4"
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        handleLogin();
+                    }}
+                >
                     <input name="email" value={loginForm.email} onChange={(e) => handleChange(e, true)} placeholder="Email" className="w-full rounded-lg border p-3 border-gray-200" />
 
                     <input
@@ -229,10 +243,10 @@ const Header = () => {
                         </a>
                     </div>
 
-                    <Button variant="primary" size="md" className="w-full cursor-pointer" onClick={handleLogin}>
+                    <Button type="submit" variant="primary" size="md" className="w-full cursor-pointer">
                         Đăng nhập
                     </Button>
-                </div>
+                </form>
             </Modal>
 
             <Modal open={openRegister} onClose={() => setOpenRegister(false)} title="Đăng ký">

@@ -1,9 +1,12 @@
 "use client";
 
-import Select from "react-select";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { api } from "@/services/api";
+import dynamic from "next/dynamic";
+const Select = dynamic(() => import("react-select"), {
+    ssr: false,
+});
 
 type Option = {
     value: string;
@@ -70,7 +73,6 @@ export default function SearchBar() {
 
         router.push(`/list?${params.toString()}`);
     };
-
     return (
         <div className="flex items-center bg-white rounded-2xl shadow-lg p-4 flex-col w-full md:w-fit md:flex-row gap-4">
             <div className="w-full md:w-60 md:border-r border-gray-300 md:pr-4">

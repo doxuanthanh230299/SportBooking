@@ -21,4 +21,8 @@ export const bookingService = {
             data: booking,
         });
     },
+
+    getByUser(userId: string) {
+        return api<Booking[]>(`/bookings?userId=${userId}`);
+    },
 };

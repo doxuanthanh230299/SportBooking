@@ -17,3 +17,9 @@ export interface Booking {
     durationHours?: number;
     endTime?: string;
 }
+
+export interface TimeSlot {
+    id: string;
+    startTime: string;
+    endTime: string;
+}
