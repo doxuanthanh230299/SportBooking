@@ -9,6 +9,7 @@ import { Court } from "@/types/courts";
 import { Booking, TimeSlot } from "@/types/bookings";
 import { LogIn, SearchX } from "lucide-react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 interface BookingDetail {
     booking: Booking;
@@ -84,6 +85,15 @@ const BookingPage = () => {
                 </div>
             </div>
         );
+    }
+
+    const user = authService.getCurrentUser();
+    if (!user) {
+        return <div>Vui lòng đăng nhập</div>;
+    }
+
+    if (user.role !== "customer") {
+        redirect("/unauthorized");
     }
 
     return (

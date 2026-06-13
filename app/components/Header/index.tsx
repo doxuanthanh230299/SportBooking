@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { User } from "lucide-react";
+import { Menu, User, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -20,6 +20,7 @@ const Header = () => {
 
     const [openLogin, setOpenLogin] = useState(false);
     const [openRegister, setOpenRegister] = useState(false);
+    const [openMenu, setOpenMenu] = useState(false);
 
     const [loginForm, setLoginForm] = useState<LoginPayload>({
         email: "",
@@ -149,8 +150,8 @@ const Header = () => {
     return (
         <>
             <header className="bg-primary-850 shadow">
-                <div className="max-w-screen-xl mx-auto py-4 px-6 flex items-center gap-4 w-full rounded-b-xl">
-                    <Link href="/" className="text-white flex items-center gap-4">
+                <div className="max-w-screen-xl mx-auto py-4 px-4 md:px-6 flex items-center gap-4 w-full rounded-b-xl">
+                    <Link href="/" className="text-white flex items-center gap-3">
                         <Image
                             src="/logo.png"
                             alt="Logo"
@@ -169,8 +170,40 @@ const Header = () => {
                         </div>
                     </Link>
 
-                    <Navigation />
+                    <div className="hidden md:flex">
+                        <Navigation />
+                    </div>
+                    {openMenu && (
+                        <>
+                            <div className="fixed inset-0 bg-black/50 z-40" onClick={() => setOpenMenu(false)} />
 
+                            <div className="fixed right-0 top-0 h-screen w-72 bg-white z-50 shadow-xl">
+                                <div className="flex items-center justify-between p-4 border-b">
+                                    <span className="font-bold text-lg">Menu</span>
+
+                                    <button onClick={() => setOpenMenu(false)}>
+                                        <X />
+                                    </button>
+                                </div>
+
+                                <div className="p-4">
+                                    <Navigation />
+
+                                    {user && (
+                                        <div className="mt-6 border-t pt-4">
+                                            <p className="font-semibold">{user.fullName}</p>
+
+                                            <p className="text-sm text-gray-500">{user.email}</p>
+
+                                            <button onClick={handleLogout} className="mt-4 text-red-500">
+                                                Đăng xuất
+                                            </button>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </>
+                    )}
                     <div className="flex items-center gap-4 ml-auto">
                         {isLogin ? (
                             <div className="relative group">
@@ -206,6 +239,10 @@ const Header = () => {
                             </Button>
                         )}
                     </div>
+
+                    <button className="md:hidden text-white" onClick={() => setOpenMenu(true)}>
+                        <Menu size={28} />
+                    </button>
                 </div>
             </header>
 
