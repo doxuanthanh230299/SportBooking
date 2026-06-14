@@ -103,6 +103,26 @@
       "status": "active",
       "avatar": "https://i.pravatar.cc/150?u=abcxyz1@gmail.com",
       "id": 5
+    },
+    {
+      "email": "halkf8@gmail.com",
+      "password": "$2a$10$ss6YM0zYjKssRB0LYwN3TeytaEt.I9kMR15qGjrCkY/PfVDum6aRO",
+      "fullName": "halkf9",
+      "phone": "0918151515",
+      "role": "customer",
+      "status": "active",
+      "avatar": "https://i.pravatar.cc/150?u=halkf8@gmail.com",
+      "id": 6
+    },
+    {
+      "email": "halkf8@gmail.com",
+      "password": "$2a$10$c9nYrWJw08umMDIf5IKf3.ap6Hj.3SMzoHsOTVr1I/RCE4cdvBOJW",
+      "fullName": "halkf8",
+      "phone": "0888888888",
+      "role": "customer",
+      "status": "active",
+      "avatar": "https://i.pravatar.cc/150?u=halkf9@gmail.com",
+      "id": 7
     }
   ],
   "courtOwners": [

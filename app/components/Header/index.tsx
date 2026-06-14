@@ -13,14 +13,14 @@ import { authService, LoginPayload, RegisterPayload } from "@/services/auth.serv
 
 import { User as UserType } from "@/types/user";
 
+import { useRouter } from "next/navigation";
+
 const Header = () => {
+    const router = useRouter();
     const [mounted, setMounted] = useState(false);
-
     const [user, setUser] = useState<UserType | null>(null);
-
     const [openLogin, setOpenLogin] = useState(false);
     const [openRegister, setOpenRegister] = useState(false);
-
     const [loginForm, setLoginForm] = useState<LoginPayload>({
         email: "",
         password: "",
@@ -41,7 +41,6 @@ const Header = () => {
     });
 
     useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMounted(true);
         setUser(authService.getCurrentUser());
     }, []);
@@ -130,6 +129,7 @@ const Header = () => {
     const handleLogout = () => {
         authService.logout();
         setUser(null);
+        router.push("/");
     };
 
     if (!mounted) {
@@ -184,7 +184,7 @@ const Header = () => {
                                     </div>
 
                                     <div className="p-2">
-                                        <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 cursor-pointer">Thông tin cá nhân</button>
+                                        <Link href="/account" className="block w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 cursor-pointer">Thông tin cá nhân</Link>
 
                                         <button onClick={handleLogout} className="w-full text-left px-3 py-2 rounded-lg text-red-500 hover:bg-red-50 cursor-pointer">
                                             Đăng xuất

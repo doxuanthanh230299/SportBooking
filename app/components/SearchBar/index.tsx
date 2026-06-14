@@ -74,15 +74,15 @@ export default function SearchBar() {
     return (
         <div className="flex items-center bg-white rounded-2xl shadow-lg p-4 flex-col w-full md:w-fit md:flex-row gap-4">
             <div className="w-full md:w-60 md:border-r border-gray-300 md:pr-4">
-                <Select placeholder="Chọn địa điểm" options={provinces} value={selectedProvince} onChange={setSelectedProvince} isClearable />
+                <Select instanceId="province-select" placeholder="Chọn địa điểm" options={provinces} value={selectedProvince} onChange={setSelectedProvince} isClearable />
             </div>
 
             <div className="w-full md:w-60 md:border-r border-gray-300 md:pr-4">
-                <Select placeholder="Quận / Huyện" options={districts} value={selectedDistrict} onChange={setSelectedDistrict} isDisabled={!selectedProvince} isClearable />
+                <Select instanceId="district-select" placeholder="Quận / Huyện" options={districts} value={selectedDistrict} onChange={setSelectedDistrict} isDisabled={!selectedProvince} isClearable />
             </div>
 
             <div className="w-full md:w-60">
-                <Select placeholder="Môn thể thao" options={sports} value={selectedSport} onChange={setSelectedSport} isClearable />
+                <Select instanceId="sport-select" placeholder="Môn thể thao" options={sports} value={selectedSport} onChange={setSelectedSport} isClearable />
             </div>
 
             <button onClick={handleSearch} className="w-full md:w-auto md:ml-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl flex items-center gap-2 cursor-pointer">
